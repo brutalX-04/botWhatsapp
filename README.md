@@ -5,13 +5,11 @@
 <h4>Python WhatsappBot created by library neonize</h4>
 <pre>
 <p># Installation for linux, use sudo for root acces required</p>
-
 <code>apt update && apt upgrade -y</code>
 <code>apt install python3-pip</code>
 <code>pip install -r requirements.txt</code>
 
 <p># Installation for termux</p>
-
 <code>pkg update && pkg upgrade -y</code>
 <code>pkg install python3</code>
 <code>pip install wheel</code>
