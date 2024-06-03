@@ -2,12 +2,14 @@
   Hello Worlds!<br/>I'm brutalX
 </h3>
 
-<p>Python WhatsappBot created by libray neonize</p>
-<p>Instalattion for linux, use sudo for root acces required</p>
+<h4>Python WhatsappBot created by library neonize</h4>
+<pre>
+<p># Installation for linux, use sudo for root acces required</p>
 
-<code>apt update && apt upgrade -y</code>
-<code>apt install python3-pip</code>
-<code>pip install -r requirements.txt</code>
+<code>apt update && apt upgrade -y</code> <br/>
+<code>apt install python3-pip</code> <br/>
+<code>pip install -r requirements.txt</code> <br/>
+</pre>
 
 <p align="center">
   <img width="500" height="200" src="https://i.ibb.co/6bCbFsq/20231203-195839.jpg">
