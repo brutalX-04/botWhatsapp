@@ -5,15 +5,18 @@
 <h4>Python WhatsappBot created by library neonize</h4>
 <pre>
 <p># Installation for linux, use sudo for root acces required</p>
-<code>apt update && apt upgrade -y</code>
-<code>apt install python3-pip</code>
+apt update && apt upgrade -y
+apt install python3-pip
+pip install -r requirements.txt
   
 <code>pip install -r requirements.txt</code>
 <p># Installation for termux</p>
-<code>pkg update && pkg upgrade -y</code>
-<code>pkg install python3</code>
-<code>pkg install -y python ndk-sysroot clang make \ libjpeg-turbo</code>
-<code>pip install -r requirements.txt</code>
+pkg update && pkg upgrade -y
+pkg install python3
+pip install wheel
+pkg install libjpeg-turbo
+LDFLAGS="-L/system/lib/" CFLAGS="-I/data/data/com.termux/files/usr/include/" pip install Pillow
+pip install -r requirements.txt
 </pre>
 
 <p align="center">
