@@ -6,9 +6,18 @@
 <pre>
 <p># Installation for linux, use sudo for root acces required</p>
 
-<code>apt update && apt upgrade -y</code> <br/>
-<code>apt install python3-pip</code> <br/>
-<code>pip install -r requirements.txt</code> <br/>
+<code>apt update && apt upgrade -y</code>
+<code>apt install python3-pip</code>
+<code>pip install -r requirements.txt</code>
+
+<p># Installation for termux</p>
+
+<code>pkg update && pkg upgrade -y</code>
+<code>pkg install python3</code>
+<code>pip install wheel</code>
+<code>pip install wheel</code>
+<code>pkg install libjpeg-turbo</code>
+<code>pip install -r requirements.txt</code>
 </pre>
 
 <p align="center">
