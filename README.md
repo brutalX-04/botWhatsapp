@@ -12,9 +12,7 @@
 <p># Installation for termux</p>
 <code>pkg update && pkg upgrade -y</code>
 <code>pkg install python3</code>
-<code>pip install wheel</code>
-<code>pip install wheel</code>
-<code>pkg install libjpeg-turbo</code>
+<code>pkg install -y python ndk-sysroot clang make \ libjpeg-turbo</code>
 <code>pip install -r requirements.txt</code>
 </pre>
 
