@@ -1,4 +1,4 @@
-from groq import Groq
+import requests, json
 from tools import get_env
 import random
 
@@ -6,15 +6,19 @@ api_key   = random.choice([get_env.get_value("GROK_APIKEY1"), get_env.get_value(
 ai_prompt = "Hi, Saya adalah WhatsApp bot yang di rancang oleh brutalX, tugas saya adalah membantu menjawab sebuah pesan"
 file      = "data/openai-status.txt"
 
-client = Groq(api_key=api_key,)
 
 def chat(msg, typ):
     status = open(file, "r").read()
     if typ == "chat" and "chat-of" in status: return
     if typ == "group" and "group-of" in status: return
 
-    chat_completion = client.chat.completions.create(
-        messages=[
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+
+    data = {
+        "messages":[
             {
                 "role": "system",
                 "content": ai_prompt
@@ -24,10 +28,12 @@ def chat(msg, typ):
                 "content": msg,
             }
         ],
-        model="llama3-8b-8192",
-    )
+        "model": "llama3-8b-8192"
+    }
 
-    return chat_completion.choices[0].message.content
+    post = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=data).json()
+
+    return post["choices"][0]["message"]["content"]
 
 def change_status(status, message):
     if message.Info.MessageSource.IsFromMe is True:
@@ -40,3 +46,4 @@ def status():
     text = open(file, "r").read()
 
     return "Ai Status : \n  `" + text + "`"
+
