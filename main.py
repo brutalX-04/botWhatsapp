@@ -16,6 +16,7 @@ from neonize.events import (
 )
 from neonize.types import MessageServerID
 from neonize.utils import log
+from PIL import Image
 from neonize.utils.enum import ReceiptType
 from removebg import RemoveBg
 from tools import reel, telebot, tiktok, groq, repair, jadwal, get_env
@@ -88,7 +89,7 @@ def send_image(client: NewClient, message: MessageEv, chat, path):
         reaction(chat, message, "✅️")
 
     except Exception as e:
-        client.reply_message(e, quoted=message)
+        client.reply_message(str(e), quoted=message)
         reaction(chat, message, "❌️")
 
 
@@ -135,7 +136,7 @@ def remove_bg(client: NewClient, message: MessageEv, chat):
         os.remove("media/no-bg.png")
 
     except Exception as e:
-        client.reply_message(e, quoted=message)
+        client.reply_message(str(e), quoted=message)
         reaction(chat, message, "❌️")
 
 
@@ -202,9 +203,9 @@ def handler(client: NewClient, message: MessageEv):
                 msg = message.Message.extendedTextMessage.contextInfo.quotedMessage
                 client.download_any(msg, path="media/download.webp")
 
-                img = Image.open("media/download.webp").convert("RGB")
-                img.save("media/download.jpg", "jpeg")
-                #ffmpeg.input("media/download.webp").output("media/download.jpg").run()
+                # img = Image.open("media/download.webp").convert("RGB")
+                # img.save("media/download.jpg", "jpeg")
+                ffmpeg.input("media/download.webp").output("media/download.jpg").run()
 
                 read(chat, message)
                 reaction(chat, message, "⏳")
