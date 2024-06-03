@@ -8,14 +8,14 @@
 apt update && apt upgrade -y
 apt install python3-pip
 pip install -r requirements.txt
-  
-<code>pip install -r requirements.txt</code>
+
 <p># Installation for termux</p>
 pkg update && pkg upgrade -y
 pkg install python3
 pip install wheel
 pkg install libjpeg-turbo
 LDFLAGS="-L/system/lib/" CFLAGS="-I/data/data/com.termux/files/usr/include/" pip install Pillow
+pip install python-magic
 pip install -r requirements.txt
 </pre>
 
