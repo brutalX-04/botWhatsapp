@@ -128,12 +128,10 @@ def remove_bg(client: NewClient, message: MessageEv, chat):
         apikey_rmv = get_env.get_value("REMOVEBG_APIKEY")
         rmbg = RemoveBg(apikey_rmv, "error.log")
         rmbg.remove_background_from_img_file("media/download.jpg")
-        # ffmpeg.input("media/download.jpg_no_bg.png").output("media/no-bg.png", vcodec='png', acodec='copy').run()
         send_image(client, message, chat, "download.jpg_no_bg.png")
 
         os.remove("media/download.jpg_no_bg.png")
         os.remove("media/download.jpg")
-        os.remove("media/no-bg.png")
 
     except Exception as e:
         client.reply_message(str(e), quoted=message)
