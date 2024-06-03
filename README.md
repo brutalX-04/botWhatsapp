@@ -12,6 +12,7 @@ pip install -r requirements.txt
 <p># Installation for termux</p>
 pkg update && pkg upgrade -y
 pkg install python3
+pkg install sox
 pip install wheel
 pkg install libjpeg-turbo
 LDFLAGS="-L/system/lib/" CFLAGS="-I/data/data/com.termux/files/usr/include/" pip install Pillow
