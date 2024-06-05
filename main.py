@@ -23,12 +23,12 @@ from tools import reel, telebot, tiktok, groq, repair, jadwal, get_env
 
 # --> Set
 try:
-    sys.path.append(os.getcwd())
-    os.chdir(os.getcwd())
+    sys.path.append("/home/ubuntu/botWhatsapp/")
+    os.chdir("/home/ubuntu/botWhatsapp/")
 except Exception as e:
-    print(e)
+    pass
 
-sys.path.insert(0, os.getcwd())
+sys.path.insert(0, "/home/ubuntu/botWhatsapp/")
 
 
 def interrupted(*_):
